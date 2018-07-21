@@ -5,7 +5,7 @@
       "lat": 37.441781,
       "lon": 24.940925,
       "velocity": 4,
-      "lastUpdatedAt": 1532195499856,
+      "lastUpdatedAt": 1532185499856,
       "stale": false
     },
     {
@@ -13,7 +13,7 @@
       "lat": 37.446979,
       "lon": 25.329103,
       "velocity": 0,
-      "lastUpdatedAt": 1532195454856,
+      "lastUpdatedAt": 1532145454856,
       "stale": false
     },
     {
@@ -21,7 +21,7 @@
       "lat": 37.539121,
       "lon": 25.160325,
       "velocity": 13,
-      "lastUpdatedAt": 1532195454356,
+      "lastUpdatedAt": 1532125454356,
       "stale": false
     },
     {
@@ -29,7 +29,7 @@
       "lat": 37.084577,
       "lon": 25.149600,
       "velocity": 7,
-      "lastUpdatedAt": 1532195454956,
+      "lastUpdatedAt": 1532115454956,
       "stale": false
     },
     {
@@ -37,7 +37,7 @@
       "lat": 37.104321,
       "lon": 25.375929,
       "velocity": 0,
-      "lastUpdatedAt": 1532195451956,
+      "lastUpdatedAt": 1532095451956,
       "stale": true
     }
   ]

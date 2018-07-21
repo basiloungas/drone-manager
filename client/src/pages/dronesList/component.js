@@ -30,6 +30,8 @@ const tableColumns = [
   {
     title: 'Updated At',
     dataIndex: 'lastUpdatedAt',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.lastUpdatedAt - b.lastUpdatedAt,
     render: lastUpdatedAt => <p>{new Date(lastUpdatedAt).toLocaleString()}</p>,
   },
   {

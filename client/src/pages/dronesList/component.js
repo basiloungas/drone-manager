@@ -1,34 +1,55 @@
 import React from 'react';
 import GeoImage from '../../components/geoImage';
 
-const renderItem = droneData => {
-  const {
-    id,
-    lat,
-    lon,
-    velocity,
-    lastUpdatedAt,
-    stale,
-  } = droneData;
+import { Table } from 'antd';
 
-  return (
-    <li key={id}>
-      <p>{id}</p>
-      <p>{lat}</p>
-      <p>{lon}</p>
-      <GeoImage lat={lat} lon={lon}/>
-      <p>{`${velocity}km/h`}</p>
-      <p>{new Date(lastUpdatedAt).toLocaleString()}</p>
-      <p>{stale ? 'Stale' : 'Moving'}</p>
-    </li>
-  );
-};
+const tableColumns = [
+  {
+    title: 'ID',
+    dataIndex: 'id',
+  },
+  {
+    title: 'Place',
+    render: ({lat, lon}) => (
+      <React.Fragment>
+        <GeoImage lat={lat} lon={lon}/>
+        <dl>
+          <dt>Latitude</dt>
+          <dd>{lat}</dd>
+          <dt>Longitude</dt>
+          <dd>{lon}</dd>
+        </dl>
+      </React.Fragment>
+    ),
+  },
+  {
+    title: 'Velocity',
+    dataIndex: 'velocity',
+    render: velocity => <p>{`${velocity}km/h`}</p>,
+  },
+  {
+    title: 'Updated At',
+    dataIndex: 'lastUpdatedAt',
+    render: lastUpdatedAt => <p>{new Date(lastUpdatedAt).toLocaleString()}</p>,
+  },
+  {
+    title: 'Stale',
+    dataIndex: 'stale',
+    render: stale => <p>{stale ? 'Stale' : 'Moving'}</p>,
+  },
+];
 
 const Homepage = ({list}) => {
   return (
-    <ul>
-      { list.map(renderItem) }
-    </ul>
+    <React.Fragment>
+      <h1>Drone list</h1>
+      <Table
+        rowKey={record => record.id}
+        columns={tableColumns}
+        dataSource={list}
+        bordered
+      />
+    </React.Fragment>
   );
 };
 

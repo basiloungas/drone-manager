@@ -1,7 +1,7 @@
 import React from 'react';
 import GeoImage from '../../components/geoImage';
 
-import { Table } from 'antd';
+import { Table, Alert } from 'antd';
 
 const tableColumns = [
   {
@@ -35,9 +35,11 @@ const tableColumns = [
   {
     title: 'Stale',
     dataIndex: 'stale',
-    render: stale => <p>{stale ? 'Stale' : 'Moving'}</p>,
+    render: stale => stale ? <Alert message="Stale" type="error" /> : <Alert message="Moving" type="success" />,
   },
 ];
+
+
 
 const Homepage = ({list}) => {
   return (
@@ -48,6 +50,7 @@ const Homepage = ({list}) => {
         columns={tableColumns}
         dataSource={list}
         bordered
+        pagination={false}
       />
     </React.Fragment>
   );

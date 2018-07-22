@@ -2,7 +2,6 @@ import io from 'socket.io-client';
 
 class SessionManager {
   constructor(config = {}) {
-    //TODO: get this from env params
     this.url = config.url;
     this.eventsList = config.eventsList || {};
 

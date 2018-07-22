@@ -35,9 +35,9 @@ const tableColumns = [
     render: lastUpdatedAt => <p>{new Date(lastUpdatedAt).toLocaleString()}</p>,
   },
   {
-    title: 'Stale',
+    title: 'State',
     dataIndex: 'stale',
-    render: stale => stale ? <Alert message="Stale" type="error" /> : <Alert message="Moving" type="success" />,
+    render: stale => stale ? <Alert message="Stale" type="error" /> : <Alert message="Active" type="success" />,
   },
 ];
 

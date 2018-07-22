@@ -25,14 +25,14 @@ const tableColumns = [
   {
     title: 'Velocity',
     dataIndex: 'velocity',
-    render: velocity => <p>{`${velocity}km/h`}</p>,
+    render: velocity => velocity === null ? <p>--</p> : <p>{`${velocity}km/h`}</p>,
   },
   {
     title: 'Updated At',
-    dataIndex: 'lastUpdatedAt',
+    dataIndex: 'updatedAt',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.lastUpdatedAt - b.lastUpdatedAt,
-    render: lastUpdatedAt => <p>{new Date(lastUpdatedAt).toLocaleString()}</p>,
+    sorter: (a, b) => a.updatedAt - b.updatedAt,
+    render: updatedAt => <p>{new Date(updatedAt).toLocaleString()}</p>,
   },
   {
     title: 'State',
